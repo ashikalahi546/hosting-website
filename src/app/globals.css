@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.custom-gradient {
+  background: linear-gradient(145deg, #03091D, #03091D, #132059, #03091D, #03091D);
+}
+
+.custom-gradient-two {
+  background: linear-gradient(  #132059,#03091D, #03091D);
+}
+
+.first-card{
+border: 1px solid #FFFFFF99 ;
+
+
+}
+
+.second-card{
+  background: linear-gradient(135deg, #9f005f, #380c85);
+  border-radius: 20px; 
+ 
+
+}
+.third-card{
+  border: 1px solid #FFFFFF99 ;
+}
+.cardBg {
+  background: url('/images/Frame51\(2\).png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 410px !important;
+  
+
+}
+@layer utilities{
+  .navber{
+    @apply relative 
+  }
+  .navber::after{
+    @apply absolute content-[''] bg-[#CF088C] h-[3px] w-[0%] left-0 bottom-5  duration-300
+  }
+  .navber:hover::after{
+    @apply w-[100%]
+  }
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* .custom-zindex {
+  z-index: -999999 !important;
+} */

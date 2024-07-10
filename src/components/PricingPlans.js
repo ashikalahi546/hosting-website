@@ -7,9 +7,13 @@ import { useEffect, useState } from "react";
 
 const PricingPlans = () => {
   const [item, setItem] = useState([]);
+  const [activeTab,setActiveTab] = useState('monthly')
+
+
   useEffect(() => {
-    setItem(pricingPlansData);
-  }, []);
+    const filter =  pricingPlansData.filter((monthly)=>monthly.type === activeTab)
+    setItem(filter);
+  }, [activeTab]);
   return (
     <div>
       <div className="text-center text-[#FFFFFF]">
@@ -20,10 +24,10 @@ const PricingPlans = () => {
       </div>
       <div className="flex justify-center py-[60px]">
         <div className="w-[248px] h-[60px] text-[#FFFFFF] bg-white rounded-[50px] p-[5px] flex  items-center  ">
-          <button className="bg-[#CF088C] w-full rounded-[50px] h-[50px] ">
+          <button onClick={()=>setActiveTab("monthly")} className={` w-full rounded-[50px] h-[50px] ${activeTab === "monthly" ? "bg-[#CF088C]" :"text-[#000000]"} `}>
             Monthly
           </button>
-          <button className=" w-full rounded-[50px] h-[50px] text-[#000000]">
+          <button onClick={()=>setActiveTab("yearly")} className={`w-full rounded-[50px] h-[50px]  ${activeTab === "yearly" ? "bg-[#CF088C] text-white" :"text-[#000000]"}`}>
             Yearly
           </button>
         </div>
@@ -31,7 +35,7 @@ const PricingPlans = () => {
 
       <div className="grid grid-cols-3 gap-[45.5px] text-[#FFFFFF]">
         {item?.map((pricing, index) => (
-          <div key={pricing?.id}>
+          <div  key={pricing?.id}>
             <div
               className={` rounded-[30px] px-[25px] py-[45px] h-[673px] ${
                 index === 0 && "first-card"
@@ -53,7 +57,7 @@ const PricingPlans = () => {
                     <div className="flex items-center opacity-70 	">
                       <span
                         className={`${
-                          (index === 0 || index === 1) && "size-[17px] "
+                          (index === 0 || index === 1 ) && "size-[17px] "
                         }`}
                       >
                         {pricing?.rupies}
@@ -69,7 +73,7 @@ const PricingPlans = () => {
                       } `}
                     ></div>
                   </div>
-                  {(index === 0 || index === 1) && (
+                  {(index === 0 || index === 1 ) && (
                     <p
                       className={`text-lg font-semibold leading-[32px] ${
                         index === 0 && "text-[#D4088C]"

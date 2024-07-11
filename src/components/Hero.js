@@ -22,12 +22,12 @@ const Hero = () => {
             Choose your plan
           </button>
         </div>
-      <div className="relative">
+      <div className="relative fade-image">
       <Image className="absolute top-20 right-0" src="/images/Vector.png" width={82} height={82} alt="loading....?"/>
       </div>
       </div>
     </div>
-    <div>
+    <div className="">
         <Image src="/images/Banner.png" width={623} height={515} alt="loading....?"/>
     </div>
 </div>

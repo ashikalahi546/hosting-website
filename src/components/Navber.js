@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { navberData } from "./../data/NavberData";
 import { LanguageIcon, SearchIcon } from "@/icons/Icons";
 import { IoIosArrowDown } from "react-icons/io";
+import { MdKeyboardArrowRight } from "react-icons/md";
 
 const Navber = () => {
   const [header, setHeader] = useState(false);
@@ -69,11 +70,11 @@ const Navber = () => {
                 {/* first submenu */}
                 {hover === itemIndex && item.submenu && (
                   <ul className="absolute top-20 left-0 bg-[#101836] !z-0 cursor-pointer    w-[182px] rounded-xl ">
-                    {/* <div
-                      className={`bg-[#000000]  size-5 rotate-45 absolute right-2.5 top-[-8px] ${
-                        tick ? "group-hover:bg-[#267FE5] !z-[-999999] duration-0" : "!z-[-999999]"
+                    <div
+                      className={`bg-[#101836] size-5 rotate-45 !z-[-999999] absolute right-2.5 top-[-8px] ${
+                        tick ? "group-hover:bg-[#267FE5] duration-0" : ""
                       }`}
-                    ></div> */}
+                    ></div>
                     {item?.submenu?.map((submenu, subIndex) => (
                       <li
                         onMouseEnter={() => {
@@ -89,7 +90,7 @@ const Navber = () => {
                           }
                         }}
                         key={subIndex}
-                        className={`hover:bg-[#267FE5] z-[9999] py-2.5 px-3 ${
+                        className={`hover:bg-[#267FE5] bg-[#101836] z-[9999] py-2.5 px-3 ${
                           subIndex === 0 ? "rounded-t-xl" : ""
                         } ${
                           subIndex === item.submenu.length - 1
@@ -97,20 +98,25 @@ const Navber = () => {
                             : ""
                         }`}
                       >
-                        <span className="text-sm leading-[14px] font-medium ">
-                          {submenu?.title}
+                        <span className="leading-[14px] font-medium ">
+                     <div className="flex items-center  gap-1">
+                     <p className="text-sm pee"> {submenu?.title}</p>
+                          {submenu.submenuTwo && (
+                            <span><MdKeyboardArrowRight  className={`peer-hover:!mr-52 block  duration-200`}/></span>
+                          ) }
+                 </div>
                         </span>
 
                         {/* second Submenu */}
                         {hovered === subIndex && submenu.submenuTwo && (
-                          <ul className="absolute top-[85px] left-[100%] bg-[#101836] cursor-pointer  ease-in-out transition	   w-[182px] rounded-xl">
+                          <ul className="absolute top-[85px] left-[100%] bg-[#101836] cursor-pointer  ease-in-out transition 	   w-[182px] rounded-xl ">
                             {submenu.submenuTwo.map(
                               (secondMenu, secondMenuIndex) => (
                                 <li
                                   key={secondMenuIndex}
                                   className="hover:bg-[#267FE5]  ease-in-out transition	z-50  first:rounded-t-xl last:rounded-b-xl py-2.5 px-3  "
                                 >
-                                  <span className="text-sm leading-[14px] font-medium">
+                                  <span className="text-sm leading-[14px] font-medium ">
                                     {secondMenu.title}
                                   </span>
                                 </li>

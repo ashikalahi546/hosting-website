@@ -9,9 +9,28 @@ import 'swiper/css/scrollbar';
 import { testimonialData } from "@/data/TestimonialData";
 import Image from "next/image";
 import { SwiperNavButtons } from './SwiperNavButtons';
-
+import React, { useEffect, useState } from 'react';
 
 const Testimonial = () => {
+
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+useEffect(()=>{
+  async function fetchData (){
+    try{
+      await new Promise (resolve =>setTimeout(resolve ,500))
+      setData(testimonialData) 
+    }finally{
+      setLoading(false)
+    }
+  }
+  fetchData()
+},[])
+
+
+
+
   return (
     <div className=" relative">
       <div className="w-[1330px] mx-auto">
@@ -23,14 +42,16 @@ const Testimonial = () => {
           customers say about HOST.CO.IN
         </p>
       </div>
-     <div className="">
+     <div className="w-[1267px] mx-auto">
      <div  className="swiper-container  mt-[60px] relative  ">
-        <Swiper 
+       {loading ? <div className="flex items-center justify-center">
+        <div className="loading-spinner "></div> 
+       </div>:   <Swiper 
         modules={[Navigation, Pagination, A11y]}
         slidesPerView={3}
           spaceBetween={32}>
           
-          {testimonialData?.map((testimonial) => (
+          {data?.map((testimonial) => (
             <SwiperSlide key={testimonial.id} >
               <div className="flex items-center justify-center ">
                 <Image
@@ -64,7 +85,8 @@ const Testimonial = () => {
       <div >
       <SwiperNavButtons  />
       </div>
-        </Swiper>
+        </Swiper>}
+      
       </div>
      </div>
     </div>

@@ -8,7 +8,7 @@ export const SwiperNavButtons = () => {
 
   return (
     <>
-    <div className="   absolute inset-0 top-12 z-40  ">
+    <div className="absolute inset-0 top-12 z-40  ">
 
      
 

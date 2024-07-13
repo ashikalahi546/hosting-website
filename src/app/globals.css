@@ -7,8 +7,14 @@
 }
 
 .custom-gradient-two {
-  background: linear-gradient(  #132059,#03091D, #03091D);
+  background: #FFFFFF1A;
+  backdrop-filter: blur(10px);
+  /* transition: background-color 0.3s ease */
 }
+.transition-all {
+  transition: background-color 0.5s ease, transform 0.2s ease;
+}
+
 
 .first-card{
 border: 1px solid #FFFFFF99 ;
@@ -78,7 +84,7 @@ border: 1px solid #FFFFFF99 ;
   width:10px;
 }
 ::-webkit-scrollbar-track{
-background: #d1e5ff;
+background: #171a29;
 }
 ::-webkit-scrollbar-thumb{
 background: linear-gradient(#642bff,#ff22e6);
@@ -111,3 +117,15 @@ transform: rotate(0deg)
   transform: rotate(360deg)
 }
 }
+
+
+
+
+.tes{ 
+    padding-left: 20px;  /* Start padding */
+    padding-right: 20px; /* End padding */
+  } 
+  
+  .tes .swiper {
+    width: 1320px;padding: 0 32px;
+  }

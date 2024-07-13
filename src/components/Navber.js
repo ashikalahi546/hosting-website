@@ -36,13 +36,13 @@ const Navber = () => {
     
  <div>
  
-     <div
-      className={`bg-[#FFFFFF1A] h-20 rounded-[5px]  px-[25px] flex flex-col justify-center ${
-        header
-          ? " fixed w-full px-[286.5px] mx-auto  top-0 z-50  custom-gradient-two "
-          : "mx-[286.5px] "
-      }`}
-    >
+ <div
+  className={`bg-[#FFFFFF1A] h-20 px-[25px] flex flex-col justify-center transition-all ${
+    header
+      ? "fixed w-full px-[287.5px] top-0 z-50 custom-gradient-two duration-500"
+      : "w-[1320px] mx-auto rounded-[5px] duration-75"
+  }`}
+>
       <div className="flex items-center justify-between ">
         <div className="flex items-center gap-4">
           <Image
@@ -79,7 +79,7 @@ const Navber = () => {
                 </span>
                 {/* first submenu */}
                 {hover === itemIndex && item.submenu && (
-                  <ul className="absolute top-20 left-0 bg-[#101836] !z-0 cursor-pointer    w-[182px] rounded-xl ">
+                  <ul className="absolute top-20 -left-[72px] right-0 bg-[#101836] !z-0 cursor-pointer    w-[182px] rounded-xl ">
                     <div
                       className={`bg-[#101836] size-5 rotate-45 !z-[-999999] absolute right-2.5 top-[-8px] ${
                         tick ? "group-hover:bg-[#267FE5] duration-0" : ""

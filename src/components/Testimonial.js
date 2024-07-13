@@ -48,47 +48,51 @@ useEffect(()=>{
      <div  className="swiper-container  mt-[60px] relative  ">
        {loading ? <div className="flex items-center justify-center">
         <div className="loading-spinner "></div> 
-       </div>:   <Swiper 
-        modules={[Navigation, Pagination, A11y]}
-        slidesPerView={3}
-          spaceBetween={32}>
-          
-          {data?.map((testimonial) => (
-            <SwiperSlide key={testimonial.id} >
-              <div className="flex items-center justify-center ">
-                <Image
-                  src={testimonial?.image}
-                  width={100}
-                  height={100}
-                  alt="loading.....?"
-                />
-              </div>
-              <div className="flex items-center justify-center relative top-[1.2px] mt-[19px]">
-                <Image
-                  src="/images/Polygon.png"
-                  width={19}
-                  height={19}
-                  alt="loading....?"
-                />
-              </div>
-              <div className="border rounded-[20px] px-[17px] py-[34px] ">
-                <p className="leading-[22px] text-white">
-                  {testimonial?.title}
-                </p>
-              </div>
-              <div className="flex flex-col items-center pt-[15px] gap-[15px]">
-                <h3 className="text-lg font-medium text-white">{testimonial?.name}</h3>
-                {/* <div className="text-white ">
-                    {testimonial?.rating}
-                </div> */}
-       <Star/>
-              </div>
-            </SwiperSlide>
-          ))}
-      <div >
-      <SwiperNavButtons  />
-      </div>
-        </Swiper>}
+       </div>:   
+       <div className='tes'>
+        <Swiper 
+          modules={[Navigation, Pagination, A11y]}
+          slidesPerView={3}
+            spaceBetween={34}>
+            
+            {data?.map((testimonial) => (
+              <SwiperSlide key={testimonial.id} >
+                <div className="flex items-center justify-center ">
+                  <Image
+                    src={testimonial?.image}
+                    width={100}
+                    height={100}
+                    alt="loading.....?"
+                  />
+                </div>
+                <div className="flex items-center justify-center relative top-[1.2px] mt-[19px]">
+                  <Image
+                    src="/images/Polygon.png"
+                    width={19}
+                    height={19}
+                    alt="loading....?"
+                  />
+                </div>
+                <div className="border rounded-[20px] px-[17px] py-[34px] ">
+                  <p className="leading-[22px] text-white">
+                    {testimonial?.title}
+                  </p>
+                </div>
+                <div className="flex flex-col items-center pt-[15px] gap-[15px]">
+                  <h3 className="text-lg font-medium text-white">{testimonial?.name}</h3>
+                  {/* <div className="text-white ">
+                      {testimonial?.rating}
+                  </div> */}
+        <Star/>
+                </div>
+              </SwiperSlide>
+            ))}
+        <div >
+        <SwiperNavButtons  />
+        </div>
+          </Swiper>
+       </div>
+        }
       
       </div>
      </div>

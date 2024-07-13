@@ -5,6 +5,8 @@ import { navberData } from "./../data/NavberData";
 import { LanguageIcon, SearchIcon } from "@/icons/Icons";
 import { IoIosArrowDown } from "react-icons/io";
 import { MdKeyboardArrowRight } from "react-icons/md";
+import { IoArrowUpCircleOutline } from "react-icons/io5";
+
 
 const Navber = () => {
   const [header, setHeader] = useState(false);
@@ -25,8 +27,16 @@ const Navber = () => {
       window.removeEventListener("scroll", scrollHeader);
     };
   }, []);
+
+  const scrollUp =()=>{
+    window.scrollTo({top:0,behavior:"smooth",})
+  }
+
   return (
-    <div
+    
+ <div>
+ 
+     <div
       className={`bg-[#FFFFFF1A] h-20 rounded-[5px]  px-[25px] flex flex-col justify-center ${
         header
           ? " fixed w-full px-[286.5px] mx-auto  top-0 z-50  custom-gradient-two "
@@ -148,6 +158,9 @@ const Navber = () => {
         </div>
       </div>
     </div>
+    {header && <button onClick={()=>scrollUp()} className="text-3xl fixed bottom-6 b text-white right-5 duration-300 z-40"><IoArrowUpCircleOutline />
+</button>}
+ </div>
   );
 };
 

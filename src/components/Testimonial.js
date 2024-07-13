@@ -9,7 +9,9 @@ import 'swiper/css/scrollbar';
 import { testimonialData } from "@/data/TestimonialData";
 import Image from "next/image";
 import { SwiperNavButtons } from './SwiperNavButtons';
+// import { Star } from './Star';
 import React, { useEffect, useState } from 'react';
+import Star from './Star';
 
 const Testimonial = () => {
 
@@ -79,6 +81,7 @@ useEffect(()=>{
                 {/* <div className="text-white ">
                     {testimonial?.rating}
                 </div> */}
+       <Star/>
               </div>
             </SwiperSlide>
           ))}

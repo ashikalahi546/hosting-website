@@ -1,12 +1,13 @@
 "use client"
 import { FaccebookIcon, InstagramIcon, LinkedinIcon, TwitterIcon } from "@/icons/Icons";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const Footer = () => {
-  const handleClick = () => {
-    window.open("https://facebook.com", "_blank");
-  };
+  // const handleClick = () => {
+  //   window.open("https://facebook.com", "_blank");
+  // };
   
   return (
     <div className="bg-[#03091D] h-[500px] relative">
@@ -32,9 +33,12 @@ const Footer = () => {
             porttitor rhoncus dolor purus non enim praesent elem
           </p>
           <div className="flex items-center gap-[25px]">
-         <div className="cursor-pointer" onClick={() => handleClick()}>
+         {/* <div className="cursor-pointer" onClick={() => handleClick()}>
          <FaccebookIcon />
-         </div>
+         </div> */}
+         <Link href="https://facebook.com" target="_blank">
+         <FaccebookIcon />
+         </Link>
            <div className="cursor-pointer" onClick={()=>window.open("https://www.instagram.com/ashik__alahi/", "blank")}>
            <InstagramIcon/>
            </div>

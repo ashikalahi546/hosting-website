@@ -1,40 +1,49 @@
-// {
-//   "workbench.iconTheme": "material-icon-theme",
-//   "files.autoSave": "afterDelay",
-//   "[html]": {
-//     "editor.defaultFormatter": "esbenp.prettier-vscode"
-//   },
-//   "workbench.colorCustomizations": {
-//     "editorBracketHighlight.foreground2": "#5af78e"
-//   },
 
-//   "[javascript]": {
-//     "editor.defaultFormatter": "esbenp.prettier-vscode"
-//   },
-//   "editor.stickyScroll.enabled": false,
-//   "editor.minimap.enabled": false,
-//   "editor.fontLigatures": true,
-//   "editor.fontFamily": "'fira code'",
-//   "editor.fontWeight": "400",
-//   "json.schemas": [],
-//   "emmet.includeLanguages": {
-//     "javascript": "javascriptreact"
-//   },
+{
+  "workbench.colorTheme": "Karma",
+  "window.menuBarVisibility": "visible",
+  "editor.fontFamily": "'Fira Code'",
+  "editor.fontWeight": "250",
+  "editor.fontLigatures": true,
+  "editor.cursorBlinking": "expand",
+  "terminal.integrated.fontSize": 15,
+  "workbench.iconTheme": "material-icon-theme",
+  "window.titleBarStyle": "custom",
+  "javascript.updateImportsOnFileMove.enabled": "always",
 
-//   "[json]": {
-//     "editor.defaultFormatter": "esbenp.prettier-vscode"
-//   },
-//   "terminal.integrated.env.windows": {},
-//   "update.showReleaseNotes": false,
-//   "diffEditor.ignoreTrimWhitespace": false,
-//   "editor.fontSize": 13,
-//   "[css]": {
-//     "editor.defaultFormatter": "esbenp.prettier-vscode"
-//   },
-//   "workbench.colorTheme": "Karma Legacy",
-//   "console-ninja.featureSet": "Community",
-//   "javascript.updateImportsOnFileMove.enabled": "always",
-//   "[jsonc]": {
-//     "editor.defaultFormatter": "esbenp.prettier-vscode"
-//   }
-// }
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  // other settings
+  "tailwindCSS.includeLanguages": {
+    "javascript": "javascript",
+    "html": "HTML"
+  },
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "vsicons.dontShowNewVersionMessage": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "files.autoSave": "afterDelay",
+  "explorer.confirmDelete": false,
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "vscode.css-language-features"
+  },
+  "editor.fontSize": 13.5,
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "terminal.integrated.env.windows": {},
+  // "powermode.enabled": true,
+  // "powermode.combo.location": "off",
+  // "glassit.alpha": 255,
+  "console-ninja.featureSet": "Community",
+  "json.schemas": [
+
+  ]
+}
